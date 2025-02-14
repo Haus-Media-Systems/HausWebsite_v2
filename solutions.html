@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAUS Media Systems</title>
+    <style>
+    /* Haus Design System */
+    :root {
+        --primary: #FF3366;
+        --secondary: #1E1E1E;
+        --accent: #00F0FF;
+        --dark: #0a0a0a;
+        --light: #ffffff;
+        --gradient-1: linear-gradient(135deg, var(--primary), var(--accent));
+        --haus-font: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+    }
+
+    /* Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--haus-font);
+        background: var(--dark);
+        color: var(--light);
+        line-height: 1.6;
+    }
+
+    /* Navigation */
+    .glass-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 20px 40px;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--light);
+        text-decoration: none;
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 40px;
+    }
+
+    .nav-links a {
+        color: var(--light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 0;
+        position: relative;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-1);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+        background: linear-gradient(45deg, var(--secondary), var(--dark));
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+        line-height: 1.1;
+        margin-bottom: 30px;
+        color: var(--primary);
+        background: var(--gradient-1);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
+        margin-bottom: 40px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Stats Section */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 80px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .stat-card {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 40px 30px;
+        border-radius: 20px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        background: var(--gradient-1);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Solutions Section */
+    .solutions-section {
+        padding: 100px 40px;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        text-align: center;
+        margin-bottom: 20px;
+        background: var(--gradient-1);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 600px;
+        margin: 0 auto 60px;
+    }
+
+    .solution-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .solution-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 40px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .solution-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(255, 51, 102, 0.15);
+    }
+
+    .card-icon {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+    }
+
+    .solution-card h3 {
+        font-size: 1.5rem;
+        color: var(--light);
+        margin-bottom: 15px;
+    }
+
+    .solution-card p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+    }
+
+    .card-hover {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    .solution-card:hover .card-hover {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .card-hover ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card-hover ul li {
+        color: var(--accent);
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+
+    /* Case Study */
+    .case-study-card {
+        padding: 60px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .case-study-number {
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--light);
+        margin-bottom: 20px;
+    }
+
+    .case-study-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .case-study-quote {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 800px;
+    }
+
+    /* Transform Section */
+    .transform-section {
+        padding: 120px 40px;
+        text-align: left;
+    }
+
+    .transform-title {
+        font-size: clamp(3rem, 8vw, 5rem);
+        line-height: 1.1;
+        background: linear-gradient(135deg, #9D7EF3, #7EB6F3, #7EE6F3);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        max-width: 1200px;
+        margin: 0 auto 60px;
+    }
+
+    .engineer-button {
+        display: inline-block;
+        padding: 20px 40px;
+        font-size: 1.2rem;
+        color: var(--light);
+        text-decoration: none;
+        background: linear-gradient(135deg, #FF6B97, #7EE6F3);
+        border-radius: 100px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .engineer-button:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+        background: rgba(10, 10, 10, 0.95);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 60px 40px;
+        margin-top: 80px;
+    }
+
+    .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 60px;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-col h3 {
+        color: var(--light);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-col a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+        color: var(--primary);
+    }
+
+    .social-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1200px) {
+        .solution-grid,
+        .footer-content {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .glass-nav {
+            padding: 20px;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        .stats-grid,
+        .solution-grid {
+            grid-template-columns: 1fr;
+            padding: 40px 20px;
+        }
+        
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .transform-section {
+            padding: 60px 20px;
+        }
+    }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="glass-nav">
+        <a href="/" class="logo">HAUS</a>
+        <div class="nav-links">
+            <a href="#solutions">Solutions</a>
+            <a href="#case-studies">Results</a>
+            <a href="#contact">Connect</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Intelligent Media Systems</h1>
+            <p>Engineering the future of media production</p>
+            <a href="#contact" class="engineer-button">Schedule Engineering Consult</a>
+        </div>
+    </header>
+
+    <section id="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">10X</div>
+                <div class="stat-label">Faster Production</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4K</div>
+                <div class="stat-label">Real-time Processing</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">System Uptime</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="solutions-section">
+        <h2 class="section-title">Media Solutions</h2>
+        <p class="section-subtitle">Transform your production pipeline with intelligent systems</p>
+        
+        <div class="solution-grid">
+            <div class="solution-card">
+                <div class="card-icon"><i class="fas fa-film"></i></div>
+                <h3>Post-Production Systems</h3>
+                <p>Automated video editing, color correction, and audio enhancement, reducing production time by 80%.</p>
+                <div class="card-hover">
+                    <ul>
+                        <li>Neural Color Grading</li>
+                        <li>Automated Editing</li>
+                        <li>Sound Enhancement</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="card-icon"><i class="fas fa-database"></i></div>
+                <h3>Asset Management</h3>
+                <p>AI-driven organization, intelligent tagging, and neural search to streamline content workflows.</p>
+                <div class="card-hover">
+                    <ul>
+                        <li>Smart Cataloging</li>
+                        <li>Neural Search</li>
+                        <li>Auto-Tagging</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="card-icon"><i class="fas fa-broadcast-tower"></i></div>
+                <h3>Distribution Matrix</h3>
+                <p>Intelligent scheduling and cross-platform deployment to optimize content performance.</p>
+                <div class="card-hover">
+                    <ul>
+                        <li>Smart Scheduling</li>
+                        <li>Multi-Platform Delivery</li>
+                        <li>Performance Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="case-studies">
+        <div class="case-study-card">
+            <div class="case-study-number">10X</div>
+            <h3 class="case-study-title">Global Media Network</h3>
+            <p class="case-study-quote">"HAUS systems revolutionized our entire production pipeline. What took days now takes hours."</p>
+        </div>
+    </section>
+
+    <section class="transform-section">
+        <h2 class="transform-title">Ready to Transform?</h2>
+        <div class="transform-cta">
+            <a href="#contact" class="engineer-button">Engineer Your Future</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>HAUS</h3>
+                <p>Media Systems Engineering</p>
+                <p>San Francisco • New York • London</p>
+            </div>
+            <div class="footer-col">
+                <h3>Systems</h3>
+                <a href="#production">Production</a>
+                <a href="#network">Neural Network</a>
+                <a href="#distribution">Distribution</a>
+            </div>
+            <div class="footer-col">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
