@@ -1,10 +1,10 @@
 /* Haus Design System */
 :root {
-    --primary: #4FBCAF; /* Teal from the artwork */
-    --secondary: #0A1B1F; /* Dark navy from the artwork */
-    --accent: #9BDECD; /* Mint green from the artwork */
-    --dark: #0A1B1F; /* Dark navy base */
-    --light: #F2F2E9; /* Off-white from the artwork */
+    --primary: #FF3366;
+    --secondary: #1E1E1E;
+    --accent: #00F0FF;
+    --dark: #0a0a0a;
+    --light: #ffffff;
     --gradient-1: linear-gradient(135deg, var(--primary), var(--accent));
     --haus-font: 'Space Grotesk', 'Helvetica Neue', sans-serif;
 }
@@ -30,13 +30,13 @@ body {
     left: 0;
     right: 0;
     padding: 20px 40px;
-    background: rgba(10, 27, 31, 0.95);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(155, 222, 205, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
@@ -96,6 +96,7 @@ body {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: 30px;
+    color: var(--primary);
     background: var(--gradient-1);
     background-clip: text;
     -webkit-background-clip: text;
@@ -106,7 +107,7 @@ body {
 .hero-content p {
     font-size: clamp(1.1rem, 4vw, 1.5rem);
     margin-bottom: 40px;
-    color: rgba(242, 242, 233, 0.9);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Stats Section */
@@ -120,17 +121,18 @@ body {
 }
 
 .stat-card {
-    background: rgba(242, 242, 233, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     padding: 40px 30px;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(155, 222, 205, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease;
 }
 
 .stat-number {
     font-size: 3.5rem;
     font-weight: 700;
+    color: var(--primary);
     background: var(--gradient-1);
     background-clip: text;
     -webkit-background-clip: text;
@@ -141,7 +143,7 @@ body {
 /* Results Section */
 .results-section {
     padding: 100px 40px;
-    background: rgba(242, 242, 233, 0.03);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .case-study-grid {
@@ -153,8 +155,8 @@ body {
 }
 
 .case-study-card {
-    background: rgba(242, 242, 233, 0.05);
-    border: 1px solid rgba(155, 222, 205, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     padding: 40px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -163,7 +165,7 @@ body {
 .case-study-card:hover {
     border-color: var(--primary);
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(79, 188, 175, 0.2);
+    box-shadow: 0 15px 40px rgba(255, 51, 102, 0.15);
 }
 
 .case-study-icon {
@@ -188,7 +190,7 @@ body {
 .case-study-quote {
     font-size: 1rem;
     line-height: 1.6;
-    color: rgba(242, 242, 233, 0.8);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 1200px) {
@@ -206,13 +208,13 @@ body {
 /* Solutions Section */
 .solutions-section {
     padding: 100px 40px;
-    background: rgba(242, 242, 233, 0.03);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .section-subtitle {
     text-align: center;
     font-size: 1.2rem;
-    color: rgba(242, 242, 233, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     max-width: 600px;
     margin: 0 auto 60px;
 }
@@ -226,8 +228,8 @@ body {
 }
 
 .solution-card {
-    background: rgba(242, 242, 233, 0.05);
-    border: 1px solid rgba(155, 222, 205, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     padding: 40px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -238,7 +240,7 @@ body {
 .solution-card:hover {
     border-color: var(--primary);
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(79, 188, 175, 0.2);
+    box-shadow: 0 15px 40px rgba(255, 51, 102, 0.15);
 }
 
 .card-icon {
@@ -254,7 +256,7 @@ body {
 }
 
 .solution-card p {
-    color: rgba(242, 242, 233, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 20px;
 }
 
@@ -284,12 +286,12 @@ body {
 /* Statistics Section */
 .statistics-section {
     padding: 120px 40px;
-    background: linear-gradient(180deg, var(--dark), rgba(10, 27, 31, 0.9));
+    background: linear-gradient(180deg, var(--dark), rgba(30, 30, 30, 0.8));
 }
 
 .statistic {
-    background: rgba(242, 242, 233, 0.05);
-    border: 1px solid rgba(155, 222, 205, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     padding: 40px;
     margin-bottom: 30px;
@@ -298,7 +300,7 @@ body {
 
 .statistic:hover {
     border-color: var(--primary);
-    background: rgba(242, 242, 233, 0.07);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .statistic h3 {
@@ -319,7 +321,7 @@ body {
 }
 
 .statistic p {
-    color: rgba(242, 242, 233, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
     margin-bottom: 20px;
 }
@@ -349,7 +351,7 @@ body {
 
 .note {
     text-align: center;
-    color: rgba(242, 242, 233, 0.6);
+    color: rgba(255, 255, 255, 0.5);
     margin-top: 40px;
     font-size: 0.9rem;
 }
@@ -375,7 +377,8 @@ body {
 .transform-title {
     font-size: clamp(3rem, 8vw, 5rem);
     line-height: 1.1;
-    background: linear-gradient(135deg, #4FBCAF, #6DCBBF, #9BDECD);
+    color: #9D7EF3;
+    background: linear-gradient(135deg, #9D7EF3, #7EB6F3, #7EE6F3);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -390,7 +393,7 @@ body {
     font-size: 1.2rem;
     color: var(--light);
     text-decoration: none;
-    background: linear-gradient(135deg, #4FBCAF, #9BDECD);
+    background: linear-gradient(135deg, #FF6B97, #7EE6F3);
     border-radius: 100px;
     border: none;
     cursor: pointer;
@@ -403,8 +406,8 @@ body {
 
 /* Footer */
 footer {
-    background: rgba(10, 27, 31, 0.95);
-    border-top: 1px solid rgba(155, 222, 205, 0.2);
+    background: rgba(10, 10, 10, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 60px 40px;
     margin-top: 80px;
 }
@@ -430,7 +433,7 @@ footer {
 }
 
 .footer-col a {
-    color: rgba(242, 242, 233, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: color 0.3s ease;
 }
